@@ -22,10 +22,10 @@ module.exports = appInfo => {
 
 config.mysql={
   client: {
-    host:  '127.0.0.1',//'39.108.15.156',
+    host:  '127.0.0.1',//
     port: '3306',
     user: 'root',
-    password: 'root',//'ZWP2198178942zwp',
+    password: 'root',//
     database: 'movie',
   }
 }

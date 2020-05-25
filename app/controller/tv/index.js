@@ -10,14 +10,14 @@ class IndexController extends Controller {
     let res = {};
     if(Array.isArray(lists) && lists.length>0){
        for(let item of lists){
-          if(item['key']!=='sort'){
-             if(!res[item['key']]){
-                res[item['key']]=[];
-                res[item['key']].push(item)
+          if(item['key1']!=='sort'){
+             if(!res[item['key1']]){
+                res[item['key1']]=[];
+                res[item['key1']].push(item)
 
              }
              else{
-              res[item['key']].push(item)
+              res[item['key1']].push(item)
              }
           }
        }

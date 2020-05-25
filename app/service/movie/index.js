@@ -10,7 +10,7 @@ class IndexService extends Service {
   //   // 还可以直接通过 this.app 获取 app 了
   // }
   async movieCategory() {
-    const list = await this.app.mysql.query('select * from movie_category');
+    const list = await this.app.mysql.query('select * from movie_category where disabled = 0 ');
     return list;
   }
 
@@ -26,11 +26,11 @@ class IndexService extends Service {
       }
      }
      if(!where){
-      query = `SELECT * FROM movie_item ORDER BY offset,id  LIMIT ${info.offset},${info.size}`
+      query = `SELECT * FROM movie_item ORDER BY year  desc,create_time desc,px  LIMIT ${info.offset},${info.size}`
      }
      else{
        where = where.split(" ").slice(0,-1).join(' ');
-       query = `SELECT * FROM movie_item  where ${where}  ORDER BY offset,id  LIMIT ${info.offset},${info.size}`
+       query = `SELECT * FROM movie_item  where ${where}  ORDER BY year  desc,create_time desc,px  LIMIT ${info.offset},${info.size}`
      }
     const result = await this.app.mysql.query(query)
     return result;

@@ -4,7 +4,7 @@
 const Service = require('egg').Service;
 class IndexService extends Service {
   async tvCategory() {
-    const list = await this.app.mysql.query('select * from tv_category');
+    const list = await this.app.mysql.query('select * from tv_category where disabled = 0');
     return list;
   }
 

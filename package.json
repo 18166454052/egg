@@ -7,6 +7,7 @@
     "declarations": true
   },
   "dependencies": {
+    "axios-jsonp": "^1.0.4",
     "egg": "^2.15.1",
     "egg-cors": "^2.2.0",
     "egg-jwt": "^3.1.6",
@@ -20,13 +21,14 @@
     "egg-ci": "^1.11.0",
     "egg-mock": "^3.21.0",
     "eslint": "^5.13.0",
-    "eslint-config-egg": "^7.1.0"
+    "eslint-config-egg": "^7.1.0",
+    "jsonp": "^0.2.1"
   },
   "engines": {
     "node": ">=10.0.0"
   },
   "scripts": {
-    "start": "egg-scripts start --daemon --title=egg-server-cnode --ignore-stderr",
+    "start": "egg-scripts start --port=7001 --daemon --title=egg-manage --ignore-stderr",
     "stop": "egg-scripts stop --title=egg-server-egg",
     "dev": "egg-bin dev",
     "debug": "egg-bin debug",

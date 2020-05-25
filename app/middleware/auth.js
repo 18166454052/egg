@@ -5,31 +5,32 @@ module.exports = (options, app) => {
             await next();
         }
         else{
-            const header = ctx.request.header;
-            const name = header["name"]
-            const token = header["token"]
-            if(!name || !token || !name.trim() || !token.trim()){
-                ctx.body={
-                    code:403,
-                    msg:'token失效'
-                }
-            }
-            else{
-                // 存在  要验证有效性
-                const res =await ctx.service.user.index.findUser({name:name,token:token})
-                if(!res){ // token 失效
-                    ctx.body={
-                        code:403,
-                        msg:'token失效'
-                    }
-                }
-                else{
-                    //是不是 vip
-                    await next();
-                    // 如果不是VIP  是不是在免费时间内
-                }
+            // const header = ctx.request.header;
+            // const name = header["name"]
+            // const token = header["token"]
+            // if(!name || !token || !name.trim() || !token.trim()){
+            //     ctx.body={
+            //         code:403,
+            //         msg:'token失效'
+            //     }
+            // }
+            // else{
+            //     // 存在  要验证有效性
+            //     const res =await ctx.service.user.index.findUser({name:name,token:token})
+            //     if(!res){ // token 失效
+            //         ctx.body={
+            //             code:403,
+            //             msg:'token失效'
+            //         }
+            //     }
+            //     else{
+            //         //是不是 vip
+            //         await next();
+            //         // 如果不是VIP  是不是在免费时间内
+            //     }
                
-            }
+            // }
+            await next();
            
         }
         

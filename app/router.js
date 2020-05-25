@@ -24,4 +24,7 @@ module.exports = app => {
   router.post('/cartoonCategory', controller.cartoon.index.cartoonCategory);
   router.post('/cartoonItem', controller.cartoon.index.cartoonItem);
   router.post('/cartoonList', controller.cartoon.index.cartoonList);
+
+  // 解析接口
+  router.post('/jx', controller.jx.index.jx);
 };
